@@ -31,7 +31,6 @@ class Checker
         ExpectTrue(vitalsAreOk(100, 95, 60));
         ExpectFalse(vitalsAreOk(40, 91, 92));
         VitalLog.getVitalLog("All ok");
-        Console.ReadKey();
         return 0;
     }
 }
