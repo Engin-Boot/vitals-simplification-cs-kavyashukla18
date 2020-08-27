@@ -4,15 +4,16 @@ using System.Diagnostics;
 class VitalChecker
 {
    public static bool vitalsAreOk(float bpm, float spo2, float respRate) {
-        var bpmflag = bpm_check(bpm);
-        var bpmflag = spo_check(spo2);
-        var resprateflag = resp_rate_check(respRate);
-        if (bpmflag == bpmflag == resprateflag == true)
+        var flag1 = bpm_check(bpm);
+        var flag2 = spo_check(spo2);
+        var flag3 = resp_rate_check(respRate);
+        if (flag1 == flag2 ==flag3 == true)
         {
             return true;
         }
         return false;
     }
+
 
     static bool bpm_check(float bpm)
     {
