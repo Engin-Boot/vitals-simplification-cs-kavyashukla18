@@ -3,29 +3,30 @@ using System.Diagnostics;
 
 class VitalChecker
 {
-    static bool bpmChecker (float bpm)
-    {
-        return (bpm < 70 || bpm > 150);
-    }
-
-    static bool spo2Checker(float spo2)
-    {
-        return (spo2 < 90);
-    }
-
-    static bool respRateChecker(float respRate)
-    {
-        return (respRate < 30 || respRate > 95);
-    }
-    public static bool vitalsAreOk(float bpm, float spo2, float respRate)
-    {
-        bool bpmCheck = bpmChecker(bpm);
-        bool spo2check = spo2Checker(spo2);
-        bool respRateCheck = respRateChecker(respRate);
-        if (bpmCheck || spo2check || respRateCheck)
+   public static bool vitalsAreOk(float bpm, float spo2, float respRate) {
+        var flag1 = bpm_check(bpm);
+        var flag2 = spo_check(spo2);
+        var flag3 = resp_rate_check(respRate);
+        if (flag1 == flag2 ==flag3 == true)
         {
-            return false;
+            return true;
         }
-        return true;
+        return false;
     }
+
+    static bool bpm_check(float bpm)
+    {
+        return !(bpm < 70 || bpm > 150);
+    }
+
+    static bool spo_check(float spo2)
+    {
+        return !(spo2 < 90);
+    }
+
+    static bool resp_rate_check(float respRate)
+    {
+        return !(respRate < 30 || respRate > 95);
+    }
+
 }
