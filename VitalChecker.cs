@@ -7,7 +7,7 @@ class VitalChecker
         var flag1 = bpm_check(bpm);
         var flag2 = spo_check(spo2);
         var flag3 = resp_rate_check(respRate);
-        if (flag1 == flag2 ==flag3 == true)
+        if (!(flag1 ||flag2 || flag3))
         {
             return true;
         }
